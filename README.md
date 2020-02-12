@@ -1,3 +1,6 @@
+# SaverLife
+We help people save $400
+
 <div align="center">
     <img src="App/Assets/Images/TOM-Legend.png" alt="Logo" width="100%">
 </div>
@@ -163,3 +166,4 @@ If we look at the rest (and ignore unmaintained projects), many popular boilerpl
 Finally some did not contain the architecture we are looking for (the separation of concerns with Redux, Sagas, etc.), for example [re-start](https://github.com/react-everywhere/re-start).
 
 One interesting exception is [Ignite IR Boilerplate "Andross"](https://github.com/infinitered/ignite-ir-boilerplate-andross), but after consideration we decided not to use it because of the large amount of unnecessary code/components it provided.
+

@@ -1,26 +1,6 @@
 # SaverLife
 We help people save $400
 
-<div align="center">
-    <img src="App/Assets/Images/TOM-Legend.png" alt="Logo" width="100%">
-</div>
-
-![GitHub Release Date](https://img.shields.io/github/release-date/thecodingmachine/react-native-boilerplate)
-![GitHub last commit](https://img.shields.io/github/last-commit/thecodingmachine/react-native-boilerplate)
-![GitHub commit activity](https://img.shields.io/github/commit-activity/m/thecodingmachine/react-native-boilerplate)
-![GitHub commits since latest release](https://img.shields.io/github/commits-since/thecodingmachine/react-native-boilerplate/latest)
-![GitHub top language](https://img.shields.io/github/languages/top/thecodingmachine/react-native-boilerplate)
-
-# TheCodingMachine React Native boilerplate
-
-This project is a [React Native](https://facebook.github.io/react-native/) boilerplate that can be used to kickstart a mobile application.
-
-The boilerplate provides **an architecture optimized for building solid cross-platform mobile applications** through separation of concerns between the UI and business logic. It is extremely documented so that each piece of code that lands in your application can be understood and used.
-
-```
-If you love this boilerplate, give us a star, you will be a ray of sunshine in our lives :)
-```
-
 ## Architecture
 
 The driving goal of the architecture of the boilerplate is separation of concerns. Namely:
@@ -89,26 +69,16 @@ You also need to install the dependencies required by React Native:
 - for [iOS development](https://facebook.github.io/react-native/docs/getting-started.html#installing-dependencies)
 
 
-## Using the boilerplate
-
-To create a new project using the boilerplate:
-
+## Starting work on this repo
 - clone this repository
-- remove the previous git history: `rm -rf .git/`
 - install the npm dependencies by running `yarn`
-- rename the React Native project to your own project name: `yarn run rename -- <YourProjectName>` (the default name is `Boilerplate`)
-- remove the LICENSE file and the "License" section from the README if your project is not open source
-
-Feel free to remove the section "Using the boilerplate" from the README (you will not need it anymore in your project). You are encouraged to keep the rest of the documentation in your project so that it is self-explanatory.
-
-You can now create a new git repository for your project (using `git init`) and create the first commit.
 
 ## Running the project
 
 Assuming you have all the requirements installed, you can setup and run the project by running:
 
 - `yarn install` to install the dependencies
-- create your [configuration file `App/Config/index.js`](App/Config) from `index.dev.js` (if you are in dev environment) and fill the missing values
+- copy the config file that you wish to us from [`App/Config/`](App/Config) to [`App/Config/index.js`]. The dev config is named `index.dev.js`. The production config is `index.prod.js`
 - run the following steps for your platform
 
 ### Android
@@ -140,13 +110,6 @@ Assuming you have all the requirements installed, you can setup and run the proj
 - You may want to use [CocoaPods](https://cocoapods.org/) to manage your dependencies (iOS only) 
   - [Using CocoaPods to manage your package dependencies](docs/setup%20cocoapods.md)
   
-  
-## Troubleshooting
-
-### App fails to start after renaming
-
-If your application fails to start after using the `yarn run rename` command, please take a look at [this issue](https://github.com/thecodingmachine/react-native-boilerplate/issues/34)
-
 ## License
 
 This project is released under the [MIT License](LICENSE).

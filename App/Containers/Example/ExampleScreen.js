@@ -63,7 +63,7 @@ class ExampleScreen extends React.Component {
               onPress={() => this._fetchUser()}
               title="Refresh"
             />
-            <ProgressBar />
+            <ProgressBar progress={0.34}/>
           </View>
         )}
       </View>

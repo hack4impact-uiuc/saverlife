@@ -6,5 +6,19 @@ export const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF'
-  }}
-)
+  },
+
+  weekInfoContainer: {
+    flexDirection: 'row',
+    alignItems: 'stretch',
+    margin: 10
+  },
+
+  weekHeader: {
+    fontSize: 25,
+  },
+
+  weekFooter: {
+    fontSize: 10,
+  },
+})

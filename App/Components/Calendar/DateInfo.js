@@ -66,12 +66,13 @@ export default class DateInfo extends Component {
 
     render() {
         return (
-        <View>
-            <View style={styles.heading}>
-                <Text>Week Summary</Text>
-                <Text>{this.timestampToWeek()}</Text>
+        <View style={styles.weekInfoContainer}>
+            <View style={{alignSelf: 'flex-start', flex:1}}>
+                <Text style={styles.weekHeader}>Week Summary</Text>
+                <Text style={styles.weekFooter}>{this.timestampToWeek()}</Text>
             </View>
-            <Button title="Add"/>
+
+            <Button style={{flex: 1, alignSelf: 'flex-end'}} title="Add New"/>
         </View>
         );
     }

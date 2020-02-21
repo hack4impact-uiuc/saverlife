@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Button } from 'react-native';
+import { styles } from './CalendarStyle';
 
 export default class DateInfo extends Component {
     constructor(props) {
@@ -7,14 +8,22 @@ export default class DateInfo extends Component {
     }
 
     // UTC Timestamp
-    timestampToString() {
-        console.log(Math.floor(this.props.timestamp / 1000));
-        let date = new Date(this.props.timestamp);
-        let month = this.monthToString(date);
+    timestampToWeek() {
+        console.log(this.props.timestamp);
+        const msInDay = 86400000;
         
-        let day = this.dayToString(date);
+        let currentDate = new Date(this.props.timestamp);
+        let dayOfWeek = (currentDate.getDay() + 1) % 7;
 
-        return month + " " + day;
+        let weekStart = new Date((currentDate.getTime() - (dayOfWeek * msInDay)));
+        let weekEnd = new Date(currentDate.getTime() + msInDay * (6 - dayOfWeek))
+
+        let startMonth = this.monthToString(weekStart);
+        let startDay = this.dayToString(weekStart);
+        let endMonth = this.monthToString(weekEnd);
+        let endDay = this.dayToString(weekEnd);
+
+        return startMonth + " " + startDay + " - " + endMonth + " " + endDay;
     }
 
     monthToString(date) {
@@ -38,6 +47,9 @@ export default class DateInfo extends Component {
     dayToString(date) {
         let day = date.getDate() + 1;
 
+        if (day >= 10 && day <= 20)
+            return day + "th";
+
         switch (day % 10) {
             case 1:
                 return day + "st";
@@ -55,7 +67,11 @@ export default class DateInfo extends Component {
     render() {
         return (
         <View>
-            <Text>{this.timestampToString()}</Text>
+            <View style={styles.heading}>
+                <Text>Week Summary</Text>
+                <Text>{this.timestampToWeek()}</Text>
+            </View>
+            <Button title="Add"/>
         </View>
         );
     }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Text } from 'react-native';
 import LineChart from "react-native-responsive-linechart";
-import Style from'./ChartStyle';
+import {styles} from'./ChartStyle';
 
 
 export default class Chart extends Component {
@@ -41,10 +41,7 @@ export default class Chart extends Component {
         };
         return (
           <View style={{ flex: 1, justifyContent: "flex-end", alignItems: "flex-end" }}>
-          <Text style={Style.title}>
-            {"Chart"}
-            //<h4>your savings at a glance</h4>
-          </Text>
+            <Text style={styles.text}>Chart</Text>
             <LineChart style={{ flex: 2 }} config={config} data={data} xLabels={xLabels}/>
           </View>
         );

@@ -22,7 +22,7 @@ export default class App extends Component {
          * @see https://github.com/rt2zz/redux-persist/blob/master/docs/PersistGate.md
          */}
         <PersistGate loading={null} persistor={persistor}>
-          <Chart />
+          <Chart data={[-10, -15, 40, 19, 32, 15, 52]}/>
         </PersistGate>
       </Provider>
     )

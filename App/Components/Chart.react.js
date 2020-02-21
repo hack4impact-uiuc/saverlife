@@ -4,9 +4,9 @@ import LineChart from "react-native-responsive-linechart";
 
 
 export default class Chart extends Component {
-
+  //constructor(props) {}
   render() {
-    const data = [-10, -15, 40, 19, 32, 15, 52];
+    const data = this.props.data; //[-10, -15, 40, 19, 32, 15, 52];
     const xLabels = lastNDays(data.length);
     const config = {
       line: {
@@ -22,6 +22,10 @@ export default class Chart extends Component {
         labelFontSize: 10,
         labelFormatter: moneyFormat
       },
+      grid: {
+        //stepSize: 75
+        stepSize: (Math.max(data)-Math.min(data))/5
+      },
       yAxis: {
         labelColor: "#54a0ff",
         labelFormatter: moneyFormat
@@ -29,12 +33,12 @@ export default class Chart extends Component {
       xAxis: {
         visible: true
       },
-      insetY: 10,
+      insetY: 275,
       insetX: 10
     };
     return (
-      <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        <LineChart style={{ flex: 1 }} config={config} data={data} xLabels={xLabels}/>
+      <View style={{ flex: 1, justifyContent: "flex-end", alignItems: "flex-end" }}>
+        <LineChart style={{ flex: 2 }} config={config} data={data} xLabels={xLabels}/>
       </View>
     );
   }
@@ -45,7 +49,10 @@ function lastNDays(n) {
   for (var i = 0; i < n; i++) {
     var d = new Date();
     d.setDate(d.getDate() - i);
-    days.push(formatDate(d))
+    if (i%2 == 0)
+      days.push('')
+    else
+      days.push(formatDate(d))
   }
   return days.reverse();
 }
@@ -61,4 +68,3 @@ function formatDate(date){
 function moneyFormat(amt){
   return "$" + amt.toFixed(2);
 }
-

@@ -2,12 +2,22 @@ import React, { Component } from 'react';
 import {Calendar as WixCalendar, CalendarList, Agenda} from 'react-native-calendars';
 import { Text, View } from 'react-native';
 import {styles, wixCalenderStyles} from './CalendarStyle'
+import DateInfo from './DateInfo';
 import EventCard from './EventCard'
 
+
 export default class Calendar extends Component {
-  state = {
-    events: {}
-  };
+  constructor(props) {
+    super(props);
+     
+    this.state = {
+      selectedDate: this.getUTCTime(),
+      events: {}
+    }
+
+    this.onSelectDate = this.onSelectDate.bind(this);
+    this.getUTCTime = this.getUTCTime.bind(this);
+  }
 
   /**
    * Lifecycle method to take events from props, formats them for the WixCalendar
@@ -31,6 +41,17 @@ export default class Calendar extends Component {
         events: formattedEvents
       }
     )
+
+  onSelectDate = (day) => {
+    console.log(day.timestamp);
+
+    this.setState({
+      selectedDate: day.timestamp
+    })
+  }
+
+  getUTCTime(){
+    return new Date().getTime();
   }
 
   render() {
@@ -39,13 +60,12 @@ export default class Calendar extends Component {
       <View style={styles.container}>
           <WixCalendar
             markedDates={this.state.events}
-            // theme={wixCalenderStyles}
-            width="100%"
-          />
-          <EventCard
-            labels={[{labelName: "test"}, {labelName: "test two"}]}
-          />
+            onDayPress={(date)=>this.onSelectDate(date)}
+            style={{height: 400, width:400}}
+           />
+          <DateInfo timestamp={this.state.selectedDate}/>
       </View>
+
     );
   }
 }

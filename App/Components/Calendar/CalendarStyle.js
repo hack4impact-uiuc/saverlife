@@ -6,9 +6,23 @@ export const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     alignItems: 'flex-start',
     width: "100%",
-    backgroundColor: "white"
-  }}
-)
+    backgroundColor: '#F5FCFF'
+  },
+
+  weekInfoContainer: {
+    flexDirection: 'row',
+      alignItems: 'stretch',
+      margin: 10
+  },
+
+  weekHeader: {
+    fontSize: 25,
+  },
+
+  weekFooter: {
+    fontSize: 10,
+  },
+})
 
 export const eventCardStyles = StyleSheet.create({
   container: {

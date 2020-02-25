@@ -29,10 +29,11 @@ export const eventCardStyles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
-    backgroundColor: "grey",
+    backgroundColor: "transparent",
     width: "100%",
     height: 90,
-    padding: 8
+    padding: 8,
+    margin: 7
   },
   eventIconWrapper: {
     flex: 2,
@@ -42,7 +43,7 @@ export const eventCardStyles = StyleSheet.create({
   eventIcon: {
     width: 74,
     height: 74,
-    backgroundColor: "red",
+    backgroundColor: "gray",
     borderRadius: 40,
     justifyContent: 'center',
     alignItems: 'center'
@@ -50,7 +51,7 @@ export const eventCardStyles = StyleSheet.create({
   eventInfo: {
     flex: 5,
     alignItems: 'flex-start',
-    backgroundColor: "red"
+    backgroundColor: "transparent"
   },
   eventLabelWrapper: {
     justifyContent: "flex-start",

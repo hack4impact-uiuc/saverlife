@@ -36,11 +36,13 @@ export default class Calendar extends Component {
       formattedEvents[dateKey] = {marked: true, ...event};
     }
 
+
     this.setState(
       {
         events: formattedEvents
       }
     )
+  }
 
   onSelectDate = (day) => {
     console.log(day.timestamp);
@@ -49,6 +51,7 @@ export default class Calendar extends Component {
       selectedDate: day.timestamp
     })
   }
+  
 
   getUTCTime(){
     return new Date().getTime();
@@ -61,7 +64,7 @@ export default class Calendar extends Component {
           <WixCalendar
             markedDates={this.state.events}
             onDayPress={(date)=>this.onSelectDate(date)}
-            style={{height: 400, width:400}}
+            style={{alignSelf: "stretch"}}
            />
           <DateInfo timestamp={this.state.selectedDate}/>
       </View>

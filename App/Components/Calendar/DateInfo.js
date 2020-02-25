@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import { Text, View, Button } from 'react-native';
 import { styles } from './CalendarStyle';
+import EventCard from './EventCard'
 
 export default class DateInfo extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            lab: [{labelName: 'BILL'}]
+        }
     }
-
+    
     // UTC Timestamp
     timestampToWeek() {
         console.log(this.props.timestamp);
@@ -65,14 +69,23 @@ export default class DateInfo extends Component {
     }
 
     render() {
-        return (
-        <View style={styles.weekInfoContainer}>
-            <View style={{alignSelf: 'flex-start', flex:1}}>
-                <Text style={styles.weekHeader}>Week Summary</Text>
-                <Text style={styles.weekFooter}>{this.timestampToWeek()}</Text>
-            </View>
 
-            <Button style={{flex: 1, alignSelf: 'flex-end'}} title="Add New"/>
+        return (
+        <View>
+            <View style={styles.weekInfoContainer}>
+                <View style={{alignSelf: 'flex-start'}}>
+                    <Text style={styles.weekHeader}>Week Summary</Text>
+                    <Text style={styles.weekFooter}>{this.timestampToWeek()}</Text>
+                </View>
+
+                <Button style={{alignSelf: 'flex-end'}} title="Add New"/>
+            </View>
+            
+            
+            <EventCard labels={this.state.lab} />
+            <EventCard labels={this.state.lab} />
+            <EventCard labels={this.state.lab} />
+            <EventCard labels={this.state.lab} />
         </View>
         );
     }

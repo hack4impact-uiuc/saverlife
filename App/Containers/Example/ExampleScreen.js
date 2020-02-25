@@ -7,6 +7,7 @@ import { liveInEurope } from 'App/Stores/Example/Selectors'
 import Style from './ExampleScreenStyle'
 import { ApplicationStyles, Helpers, Images, Metrics } from 'App/Theme'
 import Calendar from './../../Components/Calendar/Calendar'
+import { ScrollView } from 'react-native-gesture-handler'
 
 /**
  * This is an example of a container component.
@@ -28,13 +29,14 @@ class ExampleScreen extends React.Component {
   render() {
     return (
       <View
-        style={[
-          Helpers.fill,
-          Helpers.rowMain,
-          Metrics.mediumHorizontalMargin,
-          Metrics.mediumVerticalMargin,
-        ]}
+        // style={[
+        //   Helpers.fill,
+        //   Helpers.rowMain,
+        //   Metrics.mediumHorizontalMargin,
+        //   Metrics.mediumVerticalMargin,
+        // ]}
       >
+        <ScrollView>
         <Calendar events={[
           {date: "2020-02-09", dotColor: "red"},
           {date: "2020-02-10"},
@@ -69,6 +71,7 @@ class ExampleScreen extends React.Component {
         {/*    />*/}
         {/*  </View>*/}
         {/*)}*/}
+        </ScrollView>
       </View>
     )
   }

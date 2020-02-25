@@ -4,10 +4,7 @@ import { connect } from 'react-redux'
 import { PropTypes } from 'prop-types'
 import ExampleActions from 'App/Stores/Example/Actions'
 import { liveInEurope } from 'App/Stores/Example/Selectors'
-import Style from './ExampleScreenStyle'
 import { ApplicationStyles, Helpers, Images, Metrics } from 'App/Theme'
-
-import ProgressBar from '../../Components/ProgressBar';
 
 /**
  * This is an example of a container component.
@@ -63,7 +60,6 @@ class ExampleScreen extends React.Component {
               onPress={() => this._fetchUser()}
               title="Refresh"
             />
-            <ProgressBar />
           </View>
         )}
       </View>

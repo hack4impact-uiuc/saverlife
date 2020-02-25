@@ -17,7 +17,7 @@ export default class Chart extends Component {
         visible: false
       },
       tooltip: {
-        visible: false,
+        visible: true,
         labelFontSize: 10,
         labelFormatter: moneyFormat
       },
@@ -36,7 +36,7 @@ export default class Chart extends Component {
         visible: true,
         color: "#5822a3",
         radius: 4,
-        label: { visible: true, marginBottom: 25 }
+        label: { visible: false, marginBottom: 25 }
       },
       insetY: 10,
       insetX: 10

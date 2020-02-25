@@ -36,9 +36,9 @@ class ExampleScreen extends React.Component {
         ]}
       >
         <Calendar events={[
-          {date: "2020-02-09", dotColor: "red"},
-          {date: "2020-02-10"},
-          {date: "2020-02-20"}
+          {name: "Testing Var", id: "01", date: "2020-02-09", dotColor: "red"},
+          {name: "Testing Var 2", id: "02", date: "2020-02-10"},
+          {name: "Testing Var 3", id: "03", date: "2020-02-20"}
         ]}/>
         {/*{this.props.userIsLoading ? (*/}
         {/*  <ActivityIndicator size="large" color="#0000ff" />*/}

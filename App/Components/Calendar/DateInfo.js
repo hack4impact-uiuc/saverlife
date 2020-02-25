@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import { Text, View, Button } from 'react-native';
 import { styles } from './CalendarStyle';
+import EventCard from './EventCard'
 
 export default class DateInfo extends Component {
     constructor(props) {
         super(props);
+        console.log(props.events)
     }
 
     // UTC Timestamp
@@ -67,12 +69,18 @@ export default class DateInfo extends Component {
     render() {
         return (
         <View style={styles.weekInfoContainer}>
-            <View style={{alignSelf: 'flex-start', flex:1}}>
+            <View style={{alignSelf: 'flex-start', flex: 1 }}>
                 <Text style={styles.weekHeader}>Week Summary</Text>
                 <Text style={styles.weekFooter}>{this.timestampToWeek()}</Text>
             </View>
-
-            <Button style={{flex: 1, alignSelf: 'flex-end'}} title="Add New"/>
+            <Button style={{flex: 1, alignSelf: 'flex-end'}} title="Add New" />
+            {(this.props.events).map(event => (
+              <EventCard
+                 key={event.id}
+                 name={event.name}
+                 labels={[]}
+              />
+            ))}
         </View>
         );
     }

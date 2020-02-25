@@ -6,9 +6,6 @@ import EventCard from './EventCard'
 export default class DateInfo extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            lab: [{labelName: 'BILL'}]
-        }
     }
     
     // UTC Timestamp
@@ -73,19 +70,22 @@ export default class DateInfo extends Component {
         return (
         <View>
             <View style={styles.weekInfoContainer}>
-                <View style={{alignSelf: 'flex-start'}}>
+                <View style={{backgroundColor: 'gray' }}>
                     <Text style={styles.weekHeader}>Week Summary</Text>
                     <Text style={styles.weekFooter}>{this.timestampToWeek()}</Text>
                 </View>
 
-                <Button style={{alignSelf: 'flex-end'}} title="Add New"/>
+                <View>
+                    <Button title="Add New" />
+                </View>
             </View>
-            
-            
-            <EventCard labels={this.state.lab} />
-            <EventCard labels={this.state.lab} />
-            <EventCard labels={this.state.lab} />
-            <EventCard labels={this.state.lab} />
+            {(this.props.events).map(event => (
+            <EventCard
+                key={event.id}
+                name={event.name}
+                labels={[]}
+            />
+            ))}
         </View>
         );
     }

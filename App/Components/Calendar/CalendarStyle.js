@@ -11,8 +11,7 @@ export const styles = StyleSheet.create({
 
   weekInfoContainer: {
     flexDirection: 'row',
-      alignItems: 'stretch',
-      margin: 10
+    margin: 10
   },
 
   weekHeader: {

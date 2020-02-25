@@ -3,13 +3,12 @@ import { Text, View } from 'react-native';
 import {eventCardStyles} from './CalendarStyle'
 
 export default class EventCard extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {}
-  }
+  state = {
+
+  };
 
   render() {
-
+    console.log("Loading: " + this.props.name)
     return (
       <View style={eventCardStyles.container}>
         <View style={eventCardStyles.eventIconWrapper}>
@@ -20,7 +19,7 @@ export default class EventCard extends Component {
         </View>
         <View style={eventCardStyles.eventInfo}>
           <Text style={{fontSize: 20, fontWeight: "bold"}}>
-            Value
+            {this.props.name}
           </Text>
           <View style={eventCardStyles.eventLabelWrapper}>
             {this.props.labels.map(label => (

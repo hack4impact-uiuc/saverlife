@@ -3,7 +3,6 @@ import {Calendar as WixCalendar, CalendarList, Agenda} from 'react-native-calend
 import { Text, View } from 'react-native';
 import {styles, wixCalenderStyles} from './CalendarStyle'
 import DateInfo from './DateInfo';
-import EventCard from './EventCard'
 
 
 export default class Calendar extends Component {
@@ -12,7 +11,8 @@ export default class Calendar extends Component {
      
     this.state = {
       selectedDate: this.getUTCTime(),
-      events: {}
+      calendarEvents: {},
+      events: []
     }
 
     this.onSelectDate = this.onSelectDate.bind(this);
@@ -39,7 +39,8 @@ export default class Calendar extends Component {
 
     this.setState(
       {
-        events: formattedEvents
+        events: this.props.events,
+        calendarEvents: formattedEvents
       }
     )
   }
@@ -62,11 +63,14 @@ export default class Calendar extends Component {
     return (
       <View style={styles.container}>
           <WixCalendar
-            markedDates={this.state.events}
+            markedDates={this.state.calendarEvents}
             onDayPress={(date)=>this.onSelectDate(date)}
             style={{alignSelf: "stretch"}}
            />
-          <DateInfo timestamp={this.state.selectedDate}/>
+          <DateInfo
+            timestamp={this.state.selectedDate}
+            events={this.state.events}
+          />
       </View>
 
     );

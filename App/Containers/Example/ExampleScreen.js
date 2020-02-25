@@ -35,36 +35,40 @@ class ExampleScreen extends React.Component {
           Metrics.mediumVerticalMargin,
         ]}
       >
-        <Calendar />
-        {this.props.userIsLoading ? (
-          <ActivityIndicator size="large" color="#0000ff" />
-        ) : (
-          <View>
-            <View style={Style.logoContainer}>
-              <Image style={Helpers.fullSize} source={Images.logo} resizeMode={'contain'} />
-            </View>
-            <Text style={Style.text}>To get started, edit App.js</Text>
-            <Text style={Style.instructions}>{instructions}</Text>
-            {this.props.userErrorMessage ? (
-              <Text style={Style.error}>{this.props.userErrorMessage}</Text>
-            ) : (
-              <View>
-                <Text style={Style.result}>
-                  {"I'm a fake user, my name is "}
-                  {this.props.user.name}
-                </Text>
-                <Text style={Style.result}>
-                  {this.props.liveInEurope ? 'I live in Europe !' : "I don't live in Europe."}
-                </Text>
-              </View>
-            )}
-            <Button
-              style={ApplicationStyles.button}
-              onPress={() => this._fetchUser()}
-              title="Refresh"
-            />
-          </View>
-        )}
+        <Calendar events={[
+          {date: "2020-02-09", dotColor: "red"},
+          {date: "2020-02-10"},
+          {date: "2020-02-20"}
+        ]}/>
+        {/*{this.props.userIsLoading ? (*/}
+        {/*  <ActivityIndicator size="large" color="#0000ff" />*/}
+        {/*) : (*/}
+        {/*  <View>*/}
+        {/*    <View style={Style.logoContainer}>*/}
+        {/*      <Image style={Helpers.fullSize} source={Images.logo} resizeMode={'contain'} />*/}
+        {/*    </View>*/}
+        {/*    <Text style={Style.text}>To get started, edit App.js</Text>*/}
+        {/*    <Text style={Style.instructions}>{instructions}</Text>*/}
+        {/*    {this.props.userErrorMessage ? (*/}
+        {/*      <Text style={Style.error}>{this.props.userErrorMessage}</Text>*/}
+        {/*    ) : (*/}
+        {/*      <View>*/}
+        {/*        <Text style={Style.result}>*/}
+        {/*          {"I'm a fake user, my name is "}*/}
+        {/*          {this.props.user.name}*/}
+        {/*        </Text>*/}
+        {/*        <Text style={Style.result}>*/}
+        {/*          {this.props.liveInEurope ? 'I live in Europe !' : "I don't live in Europe."}*/}
+        {/*        </Text>*/}
+        {/*      </View>*/}
+        {/*    )}*/}
+        {/*    <Button*/}
+        {/*      style={ApplicationStyles.button}*/}
+        {/*      onPress={() => this._fetchUser()}*/}
+        {/*      title="Refresh"*/}
+        {/*    />*/}
+        {/*  </View>*/}
+        {/*)}*/}
       </View>
     )
   }

@@ -5,11 +5,8 @@ import {styles} from'./ChartStyle';
 
 
 export default class Chart extends Component {
-  //constructor(props) {}
   render() {
-
     const { data, xLabels } = this.props;
-    // const xLabels = lastNDays(data.length);
     const config = {
       line: {
         visible: true,
@@ -51,27 +48,6 @@ export default class Chart extends Component {
       </View>
     );
   }
-}
-
-function lastNDays(n) {
-  var days = [];
-  for (var i = 0; i < n; i++) {
-    var d = new Date();
-    d.setDate(d.getDate() - i);
-    if (i%2 == 0)
-      days.push('')
-    else
-      days.push(formatDate(d))
-  }
-  return days.reverse();
-}
-
-function formatDate(date){
-  var dd = date.getDate();
-  var mm = date.getMonth() + 1;
-  if(dd<10) { dd='0'+dd }
-  if(mm<10) { mm='0'+mm }
-  return mm+'/'+dd;
 }
 
 function moneyFormat(amt){

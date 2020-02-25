@@ -3,7 +3,7 @@ import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/lib/integration/react'
 import createStore from 'App/Stores'
 import RootScreen from './Containers/Root/RootScreen'
-import Chart from './Components/Chart.js'
+import ChartScreen from './Containers/ChartScreen/ChartScreen'
 
 const { store, persistor } = createStore()
 
@@ -22,7 +22,7 @@ export default class App extends Component {
          * @see https://github.com/rt2zz/redux-persist/blob/master/docs/PersistGate.md
          */}
         <PersistGate loading={null} persistor={persistor}>
-          <Chart data={[-10, -15, 40, 19, 32, 15, 52]}/>
+          <ChartScreen/>
         </PersistGate>
       </Provider>
     )

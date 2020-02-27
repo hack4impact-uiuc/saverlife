@@ -19,7 +19,7 @@ function lastNDays(n) {
   var days = [];
   for (var i = 0; i < n; i++) {
     var d = new Date();
-    d.setDate(d.getDate() - i);
+    d.setDate(d.getDate() - i*7);
     if (i%2 == 0)
       days.push('')
     else

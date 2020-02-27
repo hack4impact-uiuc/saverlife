@@ -81,6 +81,8 @@ export default class DateInfo extends Component {
             <EventCard
                 key={event.id}
                 name={event.name}
+                cost={event.cost}
+                date={event.date}
                 labels={[]}
             />
             ))}

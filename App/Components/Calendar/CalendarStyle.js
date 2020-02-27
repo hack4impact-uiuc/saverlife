@@ -29,16 +29,18 @@ export const eventCardStyles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     flexDirection: 'row',
-    backgroundColor: "transparent",
+    backgroundColor: "white",
+    borderRadius: 10,
     width: "100%",
     height: 90,
-    padding: 8,
     margin: 7
   },
 
   eventCategory: {
     width: 20,
-    height: 100,
+    borderTopLeftRadius: 10,
+    borderBottomLeftRadius: 10,
+    height: "100%",
     backgroundColor: 'blue'
   },
 
@@ -58,7 +60,8 @@ export const eventCardStyles = StyleSheet.create({
   eventInfo: {
     flex: 5,
     alignItems: 'flex-start',
-    backgroundColor: "transparent"
+    backgroundColor: "transparent",
+    marginStart: '3%',
   },
   eventLabelWrapper: {
     justifyContent: "flex-start",

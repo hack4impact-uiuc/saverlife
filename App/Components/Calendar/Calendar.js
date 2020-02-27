@@ -32,7 +32,6 @@ export default class Calendar extends Component {
     let formattedEvents = {};
     for (let event of events) {
       let dateKey = event.date;
-      delete event["date"];
       formattedEvents[dateKey] = {marked: true, ...event};
     }
 

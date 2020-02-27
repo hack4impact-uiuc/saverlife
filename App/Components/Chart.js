@@ -6,7 +6,7 @@ import {styles} from'./ChartStyle';
 
 export default class Chart extends Component {
   render() {
-    const { data, xLabels } = this.props;
+    const { data, xLabels, title} = this.props;
     const config = {
       line: {
         visible: true,
@@ -43,7 +43,7 @@ export default class Chart extends Component {
     };
     return (
       <View style={{ flex: 1, justifyContent: "flex-end", alignItems: "center" }}>
-        <Text style={styles.text}>Chart</Text>
+        <Text style={styles.text}>{title}</Text>
         <LineChart style={{ flex: 2 }} config={config} data={data} xLabels={xLabels}/>
       </View>
     );

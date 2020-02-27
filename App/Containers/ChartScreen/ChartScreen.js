@@ -9,7 +9,7 @@ export default class ChartScreen extends React.Component {
     const labels = lastNDays(7);
     return (
       <View style={[Helpers.fillRowCenter, styles.container]}>
-        <Chart data={[-10, -15, 40, 19, 32, 15, 52]} xLabels={labels}/>
+        <Chart title="Past savings" data={[-10, -15, 40, 19, 32, 15, 52]} xLabels={labels}/>
       </View>
     )
   }

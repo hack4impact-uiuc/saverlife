@@ -11,12 +11,10 @@ export default class EventCard extends Component {
     console.log("Loading: " + this.props.name)
     return (
       <View style={eventCardStyles.container}>
-        <View style={eventCardStyles.eventIconWrapper}>
-          <View style={eventCardStyles.eventIcon}>
-            <Text style={{fontSize: 20, fontWeight: "bold"}}>20</Text>
-            <Text style={{fontSize: 14}}>Days</Text>
-          </View>
+        <View style={eventCardStyles.eventCategory}>
+        
         </View>
+
         <View style={eventCardStyles.eventInfo}>
           <Text style={{fontSize: 20, fontWeight: "bold"}}>
             {this.props.name}

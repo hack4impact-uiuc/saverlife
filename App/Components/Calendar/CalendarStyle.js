@@ -2,16 +2,15 @@ import { StyleSheet } from 'react-native'
 
 export const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: 'flex-start',
-    alignItems: 'flex-start',
-    width: "100%",
     backgroundColor: '#F5FCFF'
   },
+})
 
-  weekInfoContainer: {
+export const dateInfoStyles = StyleSheet.create({
+    weekInfoContainer: {
     flexDirection: 'row',
-    margin: 10
+    justifyContent: 'space-between',
+    margin: 10,
   },
 
   weekHeader: {
@@ -19,7 +18,9 @@ export const styles = StyleSheet.create({
   },
 
   weekFooter: {
-    fontSize: 10,
+    fontSize: 15,
+    alignItems: 'center',
+    justifyContent: 'center'
   },
 })
 
@@ -34,6 +35,13 @@ export const eventCardStyles = StyleSheet.create({
     padding: 8,
     margin: 7
   },
+
+  eventCategory: {
+    width: 20,
+    height: 100,
+    backgroundColor: 'blue'
+  },
+
   eventIconWrapper: {
     flex: 2,
     justifyContent: 'center',

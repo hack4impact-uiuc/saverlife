@@ -13,7 +13,7 @@ class Article extends Component {
                     Learn how to save money fast!!!
                 </Text>
                 <Button 
-                    buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0, width: "60%"}}
+                    buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0, width: "50%"}}
                     title='Read More -->' />
             </Card>
         );

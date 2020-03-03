@@ -2,9 +2,9 @@ import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
     savingsContainer: {
-        margin: '3%'
+        margin: '3%',
     },
-    progressContainer: {
+    card: {
         borderWidth: 0.5,
         borderRadius: 5,
         borderColor: '#d6d7da',
@@ -18,23 +18,25 @@ export default StyleSheet.create({
         shadowOffset: {
             width: 1,
             height: 3
-        }
+        },
     },
-    transactionContainer: {
+    chartContainer: {
+        height: "45%",
+    },
+    buttonContainer: {
         flexDirection: 'row',
         justifyContent: "space-between",
-        padding: '3%'
+        alignItems: "center",
+        height: "12%",
+        marginBottom: "8%",
     },
     transactionButton: {
         backgroundColor: '#9E3185',
-        borderRadius: 20,
-        paddingLeft: '6%',
-        paddingRight: '6%',
-        justifyContent: 'center',
+        borderRadius: 18,
+        padding: "3%",
         color: '#FFFFFF'
     },
     goalButton: {
-        justifyContent: 'center',
         color: '#9E3185'
-    }
+    },
 })

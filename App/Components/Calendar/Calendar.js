@@ -12,7 +12,13 @@ export default class Calendar extends Component {
     this.state = {
       selectedDate: this.getUTCTime(),
       calendarEvents: {},
-      events: []
+      events: [
+        {name: "Water Bill", cost: "32.24", id: "01", category:1, date: new Date().getTime() + 100000000, dotColor: "red"},
+        {name: "Heating Bill", cost: "78.23", id: "02", category:1, date: new Date().getTime() + 200000000},
+        {name: "Payday", cost: "153.72", id: "03", category:2, date: new Date().getTime() + 200000000},
+        {name: "Dinner", cost: "19.72", id: "04", category:0, date: new Date().getTime() + 200000000},
+        {name: "Groceries", cost: "50.72", id: "05", category:1, date: new Date().getTime() + 200000000},
+      ]
     }
 
     this.onSelectDate = this.onSelectDate.bind(this);
@@ -27,8 +33,12 @@ export default class Calendar extends Component {
    * date pair and other optional attributes.
    */
 
-  componentDidMount(): void {
-    const events = this.props.events;
+  componentDidMount() {
+    this.formatEvents();
+  }
+
+  formatEvents() {
+    const events = this.state.events;
     let formattedEvents = {};
     for (let event of events) {
       let dateKey = event.date;
@@ -38,7 +48,6 @@ export default class Calendar extends Component {
 
     this.setState(
       {
-        events: this.props.events,
         calendarEvents: formattedEvents
       }
     )

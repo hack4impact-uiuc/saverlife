@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, Button } from 'react-native';
-import { styles, dateInfoStyles } from './CalendarStyle';
+import { primaryColor, dateInfoStyles } from './CalendarStyle';
 import EventCard from './EventCard'
 
 export default class DateInfo extends Component {
@@ -10,7 +10,6 @@ export default class DateInfo extends Component {
     
     // UTC Timestamp
     timestampToWeek() {
-        console.log(this.props.timestamp);
         const msInDay = 86400000;
         
         let currentDate = new Date(this.props.timestamp);
@@ -70,11 +69,13 @@ export default class DateInfo extends Component {
         return (
         <View>
             <View style={dateInfoStyles.weekInfoContainer}>
-                {/* <View> */}
-                    {/* <Text style={dateInfoStyles.weekHeader}>Week Summary</Text> */}
+                <View style={{flex: 1}}>
+                    <Text style={dateInfoStyles.weekHeader}>Week Summary</Text>
                     <Text style={dateInfoStyles.weekFooter}>{this.timestampToWeek()}</Text>
-                {/* </View> */}
-                <Button title="Add new" />
+                </View>
+                <View>
+                    <Button color={primaryColor} title="Add new" />
+                </View>
             </View>
 
             {(this.props.events).map(event => (
@@ -83,6 +84,7 @@ export default class DateInfo extends Component {
                 name={event.name}
                 cost={event.cost}
                 date={event.date}
+                category={event.category}
                 labels={[]}
             />
             ))}

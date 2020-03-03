@@ -37,11 +37,7 @@ class ExampleScreen extends React.Component {
         // ]}
       >
         <ScrollView>
-        <Calendar events={[
-          {name: "Water Bill", cost: "10.00", id: "01", date: new Date().getTime() + 100000000, dotColor: "red"},
-          {name: "Heating", cost: "15.23", id: "02", date: new Date().getTime() + 200000000},
-          {name: "Acai", cost: "80.72", id: "03", date: new Date().getTime() + 200000000}
-        ]}/>
+        <Calendar />
         {/*{this.props.userIsLoading ? (*/}
         {/*  <ActivityIndicator size="large" color="#0000ff" />*/}
         {/*) : (*/}

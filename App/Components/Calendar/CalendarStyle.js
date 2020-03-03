@@ -1,8 +1,10 @@
 import { StyleSheet } from 'react-native'
 
+export const primaryColor = "purple";
+
 export const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#F5FCFF'
+    backgroundColor: '#ededed',
   },
 })
 
@@ -18,26 +20,45 @@ export const dateInfoStyles = StyleSheet.create({
   },
 
   weekFooter: {
-    fontSize: 15,
+    fontSize: 13,
+    fontWeight: 'bold',
     alignItems: 'center',
-    justifyContent: 'center'
-  },
+    alignSelf: 'stretch',
+  }
 })
+
+export const categoryStyle = function(categoryId) {
+  let color = '#87ffb5';
+
+  if (categoryId == 0)
+    color = '#63c3ff';
+  else if (categoryId == 1)
+    color = '#ff5c5c';
+
+  return {
+    width: '4%',
+    borderTopLeftRadius: 10,
+    borderBottomLeftRadius: 10,
+    height: "100%",
+    backgroundColor: color,
+  }
+}
 
 export const eventCardStyles = StyleSheet.create({
   container: {
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'stretch',
     flexDirection: 'row',
     backgroundColor: "white",
     borderRadius: 10,
-    width: "100%",
-    height: 90,
-    margin: 7
+
+    width: "95%",
+    height: 80,
+    margin: 10
   },
 
   eventCategory: {
-    width: 20,
+    width: '4%',
     borderTopLeftRadius: 10,
     borderBottomLeftRadius: 10,
     height: "100%",
@@ -60,8 +81,8 @@ export const eventCardStyles = StyleSheet.create({
   eventInfo: {
     flex: 5,
     alignItems: 'flex-start',
+    justifyContent: 'center',
     backgroundColor: "transparent",
-    marginStart: '3%',
   },
   eventLabelWrapper: {
     justifyContent: "flex-start",
@@ -76,6 +97,14 @@ export const eventCardStyles = StyleSheet.create({
     paddingHorizontal: 10,
     marginRight: 4,
     borderRadius: 10
+  },
+  secondaryText: {
+    fontSize: 15,
+  },
+  primaryText: {
+    fontSize: 18, 
+    fontWeight: "bold", 
+    alignSelf: "stretch",
   }
 })
 

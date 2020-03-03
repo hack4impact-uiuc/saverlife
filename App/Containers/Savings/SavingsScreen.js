@@ -4,6 +4,7 @@ import { View, SafeAreaView, Text, TouchableOpacity } from 'react-native';
 import Style from './SavingsScreenStyle';
 import ProgressBar from '../../Components/ProgressBar';
 import ChartScreen from '../ChartScreen/ChartScreen';
+import Card from '../../Components/Card';
 
 class SavingsScreen extends React.Component {
     render() {
@@ -11,10 +12,10 @@ class SavingsScreen extends React.Component {
             <SafeAreaView style={ {flex: 1} }>
                 <View style={Style.savingsContainer}>
                     <Text>My Savings</Text>
-                    <View style={Style.card}>
+                    <Card>
                         <Text>You've saved $200. You're on track to reach $400 saved by next Wednesday!</Text>
                         <ProgressBar />
-                    </View>
+                    </Card>
                     <View style={Style.buttonContainer}>
                         <TouchableOpacity style={Style.transactionButton}>
                             <Text style={ {color: Style.transactionButton.color} }>Add Transaction</Text>
@@ -25,9 +26,9 @@ class SavingsScreen extends React.Component {
                     </View>
 
                     <Text>Your Progress</Text>
-                    <View style={ {...Style.card, ...Style.chartContainer} }>
+                    <Card style={Style.chartContainer}>
                         <ChartScreen/>
-                    </View>
+                    </Card>
                 </View>
 
                 

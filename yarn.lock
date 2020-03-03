@@ -6051,6 +6051,7 @@ react-native-paper@^3.6.0:
     color "^3.1.2"
     react-native-safe-area-view "^0.14.6"
 
+<<<<<<< HEAD
 react-native-progress@^4.0.3:
   version "4.0.3"
   resolved "https://registry.yarnpkg.com/react-native-progress/-/react-native-progress-4.0.3.tgz#0020a9ce9fa5cb14c7aac8f993b31f27a7ff2150"
@@ -6059,6 +6060,8 @@ react-native-progress@^4.0.3:
     "@react-native-community/art" "^1.0.3"
     prop-types "^15.7.2"
 
+=======
+>>>>>>> f29f5b1a134aabc50216401c9b451e08ba8b23fe
 react-native-ratings@^6.3.0:
   version "6.5.0"
   resolved "https://registry.yarnpkg.com/react-native-ratings/-/react-native-ratings-6.5.0.tgz#a1606ccba3c5b54eec8e6cfa4765a45cf0e4ab8d"

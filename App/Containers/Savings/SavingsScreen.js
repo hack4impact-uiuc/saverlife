@@ -12,7 +12,7 @@ class SavingsScreen extends React.Component {
                 <View style={Style.savingsContainer}>
                     <Text>My Savings</Text>
                     <View style={Style.card}>
-                        <Text>You've saved $5 this week. You're on track to reach $160 saved by next Wednesday!</Text>
+                        <Text>You've saved $200. You're on track to reach $400 saved by next Wednesday!</Text>
                         <ProgressBar />
                     </View>
                     <View style={Style.buttonContainer}>

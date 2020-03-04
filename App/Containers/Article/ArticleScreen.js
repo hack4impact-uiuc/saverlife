@@ -8,13 +8,11 @@ const styles = StyleSheet.create({
   screen: {
     flex: 1,
     paddingTop: '10%',
-    paddingHorizontal:'3%'
+    paddingHorizontal:'4%'
   },
   top:{
     width:'100%',
     marginLeft: 0 ,
-    // alignContent: 'center',
-    // backgroundColor: '#EAEAEA'
   },
   bottom:{
     flexDirection: 'row',
@@ -24,7 +22,6 @@ const styles = StyleSheet.create({
     aspectRatio: 1/1,
     width: '50%',
     padding: 5,
-    // backgroundColor: '#EAEAEA'
   },
   bottomItemInner:{
     flex: 1,
@@ -32,9 +29,16 @@ const styles = StyleSheet.create({
   },
   title:{
     fontWeight: "bold",
-    margin: 9,
+    marginBottom: 5,
+    marginTop:15,
     color: 'grey'
+  },
+  categoryImage:{
+    width:10,
+    height:10,
+    backgroundColor:'black',
   }
+
 });
 
 class ArticleScreen extends React.Component {
@@ -93,7 +97,7 @@ class ArticleScreen extends React.Component {
           </ScrollView>
 
 
-          // <View>
+          // <View style={styles.screen}>
           //   <Article></Article>
           // </View>
 

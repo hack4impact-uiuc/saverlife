@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text} from 'react-native';
-// import {Card} from 'react-native-shadow-cards';
-import { Card, Button, Icon } from 'react-native-elements'
 
 const styles = StyleSheet.create({
     categoryBackground: {
@@ -9,6 +7,7 @@ const styles = StyleSheet.create({
       backgroundColor: '#DCDCDC',
       alignItems: 'center',
       justifyContent: 'center',
+      borderRadius: 5,
     },
     categoryImage:{
       width:'70%',

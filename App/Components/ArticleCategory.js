@@ -5,21 +5,12 @@ import { Card, Button, Icon } from 'react-native-elements'
 
 const styles = StyleSheet.create({
     categoryBackground: {
-      // width: '50%',
-      // height: '50%',
-      // backgroundColor: 'black',
       flex: 1,
       backgroundColor: '#DCDCDC',
       alignItems: 'center',
       justifyContent: 'center',
     },
     categoryImage:{
-      // flexDirection: 'row',
-      // width: '50%',
-      // height: '50%',
-      // backgroundColor: 'white',
-      // alignContent:'center',
-      // justifyContent: 'center',
       width:'70%',
       height:'70%',
       backgroundColor:'#964AF6',

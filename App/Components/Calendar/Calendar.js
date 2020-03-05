@@ -13,11 +13,13 @@ export default class Calendar extends Component {
       selectedDate: this.getUTCTime(),
       calendarEvents: {},
       events: [
-        {name: "Water Bill", cost: "32.24", id: "01", category:1, date: new Date().getTime() + 100000000, dotColor: "red"},
-        {name: "Heating Bill", cost: "78.23", id: "02", category:1, date: new Date().getTime() + 200000000},
-        {name: "Payday", cost: "153.72", id: "03", category:2, date: new Date().getTime() + 200000000},
-        {name: "Dinner", cost: "19.72", id: "04", category:0, date: new Date().getTime() + 200000000},
-        {name: "Groceries", cost: "50.72", id: "05", category:1, date: new Date().getTime() + 200000000},
+        {name: "Heating Bill", cost: "78.23", id: "01", category:1, date: new Date().getTime() + (86400000 * -5)},
+        {name: "Water Bill", cost: "32.24", id: "02", category:1, date: new Date().getTime() + (86400000 * -2), dotColor: "red"},
+        {name: "Water Bill", cost: "32.24", id: "03", category:1, date: new Date().getTime() + (86400000 * 1), dotColor: "red"},
+        {name: "Heating Bill", cost: "78.23", id: "04", category:1, date: new Date().getTime() + (86400000 * 2)},
+        {name: "Payday", cost: "153.72", id: "05", category:2, date: new Date().getTime() + (86400000 * 3)},
+        {name: "Dinner", cost: "19.72", id: "06", category:0, date: new Date().getTime() + (86400000 * 6)},
+        {name: "Groceries", cost: "50.72", id: "07", category:1, date: new Date().getTime() + (86400000 * 8)},
       ]
     }
 

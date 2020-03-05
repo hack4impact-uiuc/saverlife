@@ -2,66 +2,52 @@ import React, { Component } from 'react';
 import { Text, View, Button } from 'react-native';
 import { primaryColor, dateInfoStyles } from './CalendarStyle';
 import EventCard from './EventCard'
+import { ScrollView } from 'react-native-gesture-handler';
+import { monthToString, dayToString } from './../../Util/DateUtils'
 
 export default class DateInfo extends Component {
     constructor(props) {
         super(props);
+
+        this.state = {
+            weekStart: new Date(),
+            weekEnd: new Date(),
+        }
+
+        this.getWeekStart = this.getWeekStart.bind(this);
+        this.getWeekEnd = this.getWeekEnd.bind(this);
     }
-    
+
     // UTC Timestamp
     timestampToWeek() {
-        const msInDay = 86400000;
-        
-        let currentDate = new Date(this.props.timestamp);
-        let dayOfWeek = (currentDate.getDay() + 1) % 7;
+        let weekStart = this.getWeekStart();
+        let weekEnd = this.getWeekEnd();
 
-        let weekStart = new Date((currentDate.getTime() - (dayOfWeek * msInDay)));
-        let weekEnd = new Date(currentDate.getTime() + msInDay * (6 - dayOfWeek))
-
-        let startMonth = this.monthToString(weekStart);
-        let startDay = this.dayToString(weekStart);
-        let endMonth = this.monthToString(weekEnd);
-        let endDay = this.dayToString(weekEnd);
+        let startMonth = monthToString(weekStart);
+        let startDay = dayToString(weekStart);
+        let endMonth = monthToString(weekEnd);
+        let endDay = dayToString(weekEnd);
 
         return startMonth + " " + startDay + " - " + endMonth + " " + endDay;
     }
 
-    monthToString(date) {
-        switch (date.getMonth()) {
-            case 0: return "January";
-            case 1: return "Feburary";
-            case 2: return "March";
-            case 3: return "April";
-            case 4: return "May";
-            case 5: return "June";
-            case 6: return "July";
-            case 7: return "August";
-            case 8: return "September";
-            case 9: return "October";
-            case 10: return "November";
-        }
-
-        return "December";
+    getWeekStart() {
+        let currentDate = new Date(this.props.timestamp);
+        let dayOfWeek = (currentDate.getDay() + 1) % 7;
+        return new Date((currentDate.getTime() - (dayOfWeek * 86400000)));
     }
 
-    dayToString(date) {
-        let day = date.getDate() + 1;
+    getWeekEnd() {
+        let currentDate = new Date(this.props.timestamp);
+        let dayOfWeek = (currentDate.getDay() + 1) % 7;
+        return new Date(currentDate.getTime() + 86400000 * (6 - dayOfWeek));
+    }
 
-        if (day >= 10 && day <= 20)
-            return day + "th";
+    eventInWeek(event) {
+        let start = this.getWeekStart();
+        let end = this.getWeekEnd();
 
-        switch (day % 10) {
-            case 1:
-                return day + "st";
-            
-            case 2:
-                return day + "nd";
-            
-            case 3:
-                return day + "rd";
-        }
-
-        return day + "th";
+        return event.date >= start.getTime() && event.date <= end.getTime();
     }
 
     render() {
@@ -69,7 +55,7 @@ export default class DateInfo extends Component {
         return (
         <View>
             <View style={dateInfoStyles.weekInfoContainer}>
-                <View style={{flex: 1}}>
+                <View>
                     <Text style={dateInfoStyles.weekHeader}>Week Summary</Text>
                     <Text style={dateInfoStyles.weekFooter}>{this.timestampToWeek()}</Text>
                 </View>
@@ -77,17 +63,24 @@ export default class DateInfo extends Component {
                     <Button color={primaryColor} title="Add new" />
                 </View>
             </View>
-
-            {(this.props.events).map(event => (
-            <EventCard
-                key={event.id}
-                name={event.name}
-                cost={event.cost}
-                date={event.date}
-                category={event.category}
-                labels={[]}
-            />
-            ))}
+            
+            <View>
+                {/* TODO: THIS IS VERY VERY VERY BAD */}
+                <ScrollView style={{height: 400}}>
+                    {(this.props.events)
+                    .filter(event => this.eventInWeek(event))
+                    .map(event => (
+                    <EventCard
+                        key={event.id}
+                        name={event.name}
+                        cost={event.cost}
+                        date={event.date}
+                        category={event.category}
+                        labels={[]}
+                    />
+                    ))}
+                </ScrollView>
+            </View>
         </View>
         );
     }

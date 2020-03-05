@@ -9,7 +9,7 @@ export const styles = StyleSheet.create({
 })
 
 export const dateInfoStyles = StyleSheet.create({
-    weekInfoContainer: {
+  weekInfoContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     margin: 10,

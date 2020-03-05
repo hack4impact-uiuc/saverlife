@@ -8,7 +8,7 @@ export default class AddTransaction extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: 7,
+      value: 0.00,
     };
   }
 
@@ -21,9 +21,20 @@ export default class AddTransaction extends React.Component {
   };
  
   formatText = (text) => {
+    console.log('text ' + text)
+    if (text == '') {
+      text = '0'
+    }
+    if (text%10 == 0)
+    return (parseInt(text.replace(/[^0-9]+/g, ''))) / 100.0;
     // accounting.formatMoney(parseFloat(value) / 100)
     //return text.replace(/[^+\d]/g, '');
-    return (parseFloat(text.replace(/[^+\d]/g, '')) / 100);
+    if (text == '') {
+      text = '0'
+    }
+    console.log('text ' + text)
+    console.log('replaced ' + text.replace(/[^0-9]+/g, ''))
+    return (parseFloat(text.replace(/[^0-9]+/g, '')) / 100);
   };
 
   render() {
@@ -36,13 +47,13 @@ export default class AddTransaction extends React.Component {
           onSubmitEditing={this.onSubmit}
           ref={this.fieldRef}
         />
-        {/* <NumericInput
+        <NumericInput
           type='currency'
           locale='en-US'
           currency='USD'
           value={this.state.value}
           onUpdate={(value) => this.setState({value})}
-        /> */}
+        />
         {/* <Text>Decimal Value: {value}</Text> */}
       </View>
     );

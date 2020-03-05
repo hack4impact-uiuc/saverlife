@@ -6,8 +6,8 @@ export default StyleSheet.create({
         justifyContent: 'space-between'
     },
     progressBar: {
-        backgroundColor: '#EFF0F1',
-        borderColor: '#EFF0F1',
-        color: '#964AF6'
+        backgroundColor: '#C4C4C4',
+        borderColor: '#FFFFFF',
+        color: '#9E3185'
     }
 });

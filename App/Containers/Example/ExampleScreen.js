@@ -4,7 +4,9 @@ import { connect } from 'react-redux'
 import { PropTypes } from 'prop-types'
 import ExampleActions from 'App/Stores/Example/Actions'
 import { liveInEurope } from 'App/Stores/Example/Selectors'
+import Style from './ExampleScreenStyle'
 import { ApplicationStyles, Helpers, Images, Metrics } from 'App/Theme'
+import NavigationBar from '../../Components/NavigationBar/NavigationBar'
 
 /**
  * This is an example of a container component.
@@ -25,6 +27,7 @@ class ExampleScreen extends React.Component {
 
   render() {
     return (
+      <>
       <View
         style={[
           Helpers.fill,
@@ -63,6 +66,7 @@ class ExampleScreen extends React.Component {
           </View>
         )}
       </View>
+      </>
     )
   }
 

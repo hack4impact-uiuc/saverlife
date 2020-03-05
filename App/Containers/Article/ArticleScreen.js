@@ -14,10 +14,10 @@ class ArticleScreen extends React.Component {
               <Text style={Style.title}> Money 101</Text>
 
 
-              <Article style={Style.top}></Article>
+              <Article style={Style.top} articleTitle="What's the difference between withdrawing from a 401k and taking out a 401k loan?" articleTags="Emergencies, Retirement"></Article>
 
 
-              <Text style={Style.title} > What do you want to learn about? </Text>
+              <Text style={Style.title}> What do you want to learn about? </Text>
               <View style={Style.bottom}>
                 
 

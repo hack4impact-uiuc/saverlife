@@ -10,14 +10,14 @@ class Article extends Component {
                 <View style={Style.imageConatiner}>
                 </View>
                 <Text style={Style.title}> 
-                    What's the difference between withdrawing from a 401k and taking out a 401k loan?
+                    {this.props.articleTitle}
                 </Text>
                 <View style={Style.bottomRow}>
                     <Text style={Style.readMore}> 
                         Read More ->
                     </Text>
                     <Text style={Style.tags}> 
-                        Emergencies, Retirement
+                        {this.props.articleTags}
                     </Text>
                 </View>
             </View>

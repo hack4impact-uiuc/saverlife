@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Platform, StyleSheet, View, Button} from 'react-native';
+import { Platform, StyleSheet, View, Button } from 'react-native';
 import styles from'./AddTransactionStyle';
 import NumericInput from '@wwdrew/react-native-numeric-textinput'
+import { TextField, FilledTextField, OutlinedTextField } from 'react-native-material-textfield';
 
 export default class AddTransaction extends React.Component {
   constructor(props) {
@@ -10,16 +11,38 @@ export default class AddTransaction extends React.Component {
       value: 7,
     };
   }
+
+  fieldRef = React.createRef();
+ 
+  onSubmit = () => {
+    let { current: field } = this.fieldRef;
+ 
+    console.log(field.value());
+  };
+ 
+  formatText = (text) => {
+    // accounting.formatMoney(parseFloat(value) / 100)
+    //return text.replace(/[^+\d]/g, '');
+    return (parseFloat(text.replace(/[^+\d]/g, '')) / 100);
+  };
+
   render() {
     return (
       <View style={styles.container}>  
-        <NumericInput
+        <OutlinedTextField
+          label='amount'
+          keyboardType='phone-pad'
+          formatText={this.formatText}
+          onSubmitEditing={this.onSubmit}
+          ref={this.fieldRef}
+        />
+        {/* <NumericInput
           type='currency'
           locale='en-US'
           currency='USD'
           value={this.state.value}
           onUpdate={(value) => this.setState({value})}
-        />
+        /> */}
         {/* <Text>Decimal Value: {value}</Text> */}
       </View>
     );

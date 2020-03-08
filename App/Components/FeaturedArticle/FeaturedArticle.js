@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
-import Style from './ArticleStyle.js';
+import Style from './FeaturedArticleStyle.js';
 
-class Article extends Component {
+class FeaturedArticle extends Component {
     render() {
         return(
         <View style={Style.container}>
@@ -27,4 +27,4 @@ class Article extends Component {
     }
 }
 
-export default Article; 
+export default FeaturedArticle; 

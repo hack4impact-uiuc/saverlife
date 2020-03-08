@@ -3,7 +3,7 @@ import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/lib/integration/react'
 import createStore from 'App/Stores'
 import RootScreen from './Containers/Root/RootScreen'
-import ArticleScreen from './Containers/Article/ArticleScreen'
+import ArticleCategoryScreen from './Containers/ArticleCategory/ArticleCategoryScreen'
 
 const { store, persistor } = createStore()
 
@@ -23,7 +23,7 @@ export default class App extends Component {
          */}
         <PersistGate loading={null} persistor={persistor}>
           {/* <RootScreen /> */}
-          <ArticleScreen/>
+          <ArticleCategoryScreen/>
         </PersistGate>
       </Provider>
     )

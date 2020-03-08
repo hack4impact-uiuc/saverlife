@@ -1,11 +1,11 @@
 import React from 'react';
 import { StyleSheet, View, Text, ScrollView } from 'react-native';
-import Article from '../../Components/Article/Article';
+import FeaturedArticle from '../../Components/FeaturedArticle/FeaturedArticle';
 import ArticleCategory from '../../Components/ArticleCategory/ArticleCategory';
-import Style from '../Article/ArticleScreenStyle.js';
+import Style from './ArticleCategoryScreenStyle.js';
 
 
-class ArticleScreen extends React.Component {
+class ArticleCategoryScreen extends React.Component {
     render() {
         return (
           <ScrollView>
@@ -14,7 +14,7 @@ class ArticleScreen extends React.Component {
               <Text style={Style.title}> Money 101</Text>
 
 
-              <Article style={Style.top} articleTitle="What's the difference between withdrawing from a 401k and taking out a 401k loan?" articleTags="Emergencies, Retirement"></Article>
+              <FeaturedArticle style={Style.top} articleTitle="What's the difference between withdrawing from a 401k and taking out a 401k loan?" articleTags="Emergencies, Retirement"></FeaturedArticle>
 
 
               <Text style={Style.title}> What do you want to learn about? </Text>
@@ -63,6 +63,6 @@ class ArticleScreen extends React.Component {
         );
     }
 }
-export default ArticleScreen;
+export default ArticleCategoryScreen;
 
 

@@ -14,7 +14,7 @@ class ProgressBar extends Component {
     }
     render() {
         return(
-            <View style={Style.progressContainer}>
+            <View>
                 <Progress.Bar style={Style.progressBar} color={Style.progressBar.color} progress={this.state.current / this.state.goal} width={null} />
                 <View style={Style.textContainer}>
                     <Text>{this.state.current / this.state.goal * 100}%</Text>

@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native'
 
 export default StyleSheet.create({
-    conatiner: {
+    container: {
         flex: 1,
         alignItems: 'center',
     },
@@ -14,7 +14,7 @@ export default StyleSheet.create({
         // shadowOpacity: 0.3,
         // shadowRadius: 4,
     },
-    imageConatiner: {
+    imageContainer: {
         backgroundColor: 'grey',
         width:'100%',
         aspectRatio:2/1,

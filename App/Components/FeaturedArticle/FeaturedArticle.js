@@ -8,7 +8,7 @@ class FeaturedArticle extends Component {
         return(
         <View style={Style.container}>
             <View style={Style.card}>
-                <View style={Style.imageConatiner}>
+                <View style={Style.imageContainer}>
                 </View>
                 <Text style={Style.title}> 
                     {this.props.articleTitle}

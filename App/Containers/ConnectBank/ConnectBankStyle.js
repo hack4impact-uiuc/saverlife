@@ -18,7 +18,7 @@ export default StyleSheet.create({
     },
     buttonContainer: {
         justifyContent: "space-between",
-        marginTop: 50,
-        marginBottom: 50,
+        marginTop: "2%",
+        marginBottom: "2%",
     },
 });

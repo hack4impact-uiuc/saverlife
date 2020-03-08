@@ -10,10 +10,10 @@ class ConnectBank extends React.Component {
             <SafeAreaView style={ {flex: 1} }>
                 <Image source={HeaderImage} />
                 <View style={Style.connectBankContainer}>
-                    <Text style={ {fontWeight: "600", marginBottom: "5%", fontSize: 23} }>
+                    <Text style={Style.connectSavingsText}>
                         Let's connect your savings account to skip this process next time.
                     </Text>
-                    <Text style={ {fontSize: 18, fontWeight: "200"} }>
+                    <Text style={Style.connectDescription}>
                         Link the account you want to save in, and we'll track your savings and reward you with points.
                     </Text>  
                     <View style={Style.buttonContainer}>
@@ -25,7 +25,7 @@ class ConnectBank extends React.Component {
                         </TouchableOpacity>  
                     </View>
                     <TouchableOpacity style={Style.laterButton}>
-                        <Text style={ {fontWeight: "200"} }>
+                        <Text style={Style.askLater}>
                             Ask me later
                         </Text>
                     </TouchableOpacity>

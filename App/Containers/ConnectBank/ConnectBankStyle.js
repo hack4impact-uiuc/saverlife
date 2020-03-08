@@ -21,4 +21,16 @@ export default StyleSheet.create({
         marginTop: "2%",
         marginBottom: "2%",
     },
+    connectSavingsText: {
+        fontWeight: "600",
+        marginBottom: "5%",
+        fontSize: 23
+    },
+    connectDescription: {
+        fontSize: 18,
+        fontWeight: "200"
+    },
+    askLater: {
+        fontWeight: "200"
+    }
 });

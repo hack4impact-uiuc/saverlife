@@ -27,13 +27,19 @@ export const dateInfoStyles = StyleSheet.create({
   }
 })
 
-export const categoryStyle = function(categoryId) {
+export const getCategoryColor = function(categoryId) {
   let color = '#87ffb5';
 
   if (categoryId == 0)
     color = '#63c3ff';
   else if (categoryId == 1)
     color = '#ff5c5c';
+  
+  return color;
+}
+
+export const categoryStyle = function(categoryId) {
+  let color = getCategoryColor(categoryId)
 
   return {
     width: '4%',

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Calendar as WixCalendar, CalendarList, Agenda} from 'react-native-calendars';
 import { Text, View } from 'react-native';
-import {styles, wixCalenderStyles} from './CalendarStyle'
+import {styles, getCategoryColor} from './CalendarStyle'
 import DateInfo from './DateInfo';
 
 
@@ -18,7 +18,7 @@ export default class Calendar extends Component {
         {name: "Water Bill", cost: "32.24", id: "03", category:1, date: new Date().getTime() + (86400000 * 1), dotColor: "red"},
         {name: "Heating Bill", cost: "78.23", id: "04", category:1, date: new Date().getTime() + (86400000 * 2)},
         {name: "Payday", cost: "153.72", id: "05", category:2, date: new Date().getTime() + (86400000 * 3)},
-        {name: "Dinner", cost: "19.72", id: "06", category:0, date: new Date().getTime() + (86400000 * 6)},
+        {name: "Dinner", cost: "19.72", id: "06", category:0, date: new Date().getTime() + (86400000 * 5)},
         {name: "Groceries", cost: "50.72", id: "07", category:1, date: new Date().getTime() + (86400000 * 8)},
       ]
     }
@@ -55,8 +55,9 @@ export default class Calendar extends Component {
     for (let event of events) {
       let date = new Date(event.date)
       let dateString = date.getFullYear() + "-" + this.padNumber(date.getMonth() + 1, 2) + "-" + this.padNumber(date.getDate() + 1, 2) 
+      let color = getCategoryColor(event.category)
 
-      formattedEvents[dateString] = {marked: true};
+      formattedEvents[dateString] = {marked: true, dotColor: color};
     }
 
     console.log("EVENTS: " + JSON.stringify(formattedEvents))

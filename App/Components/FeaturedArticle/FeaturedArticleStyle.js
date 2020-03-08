@@ -20,6 +20,8 @@ export default StyleSheet.create({
         aspectRatio:2/1,
         borderTopLeftRadius: 5,
         borderTopRightRadius: 5,
+        maxWidth:'100%',
+        flex: 1
     },
     title:{
         fontWeight: 'bold',

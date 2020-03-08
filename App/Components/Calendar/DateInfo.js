@@ -47,7 +47,9 @@ export default class DateInfo extends Component {
         let start = this.getWeekStart();
         let end = this.getWeekEnd();
 
-        return event.date >= start.getTime() && event.date <= end.getTime();
+        console.log("Start Date: " + start.getTime() + " Event: " + event.date + " End: " + end.getTime())
+
+        return (event.date >= start.getTime()) && (event.date <= end.getTime());
     }
 
     render() {
@@ -66,7 +68,7 @@ export default class DateInfo extends Component {
             
             <View>
                 {/* TODO: THIS IS VERY VERY VERY BAD */}
-                <ScrollView style={{height: 400}}>
+                <ScrollView style={{height: 370}}>
                     {(this.props.events)
                     .filter(event => this.eventInWeek(event))
                     .map(event => (

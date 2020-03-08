@@ -39,13 +39,27 @@ export default class Calendar extends Component {
     this.formatEvents();
   }
 
+  padNumber(number, length) {
+    let paddedNumber = number
+
+    for (let i = 0; i < length - number.toString().length; i++) {
+      paddedNumber = "0" + paddedNumber;
+    }
+
+    return paddedNumber;
+  }
+
   formatEvents() {
     const events = this.state.events;
     let formattedEvents = {};
     for (let event of events) {
-      let dateKey = event.date;
-      formattedEvents[dateKey] = {marked: true, ...event};
+      let date = new Date(event.date)
+      let dateString = date.getFullYear() + "-" + this.padNumber(date.getMonth() + 1, 2) + "-" + this.padNumber(date.getDate() + 1, 2) 
+
+      formattedEvents[dateString] = {marked: true};
     }
+
+    console.log("EVENTS: " + JSON.stringify(formattedEvents))
 
 
     this.setState(

@@ -12,42 +12,12 @@ export default class AddTransaction extends React.Component {
     };
   }
 
-  fieldRef = React.createRef();
- 
-  onSubmit = () => {
-    let { current: field } = this.fieldRef;
- 
-    console.log(field.value());
-  };
- 
-  formatText = (text) => {
-    console.log('text ' + text)
-    if (text == '') {
-      text = '0'
-    }
-    if (text%10 == 0)
-    return (parseInt(text.replace(/[^0-9]+/g, ''))) / 100.0;
-    // accounting.formatMoney(parseFloat(value) / 100)
-    //return text.replace(/[^+\d]/g, '');
-    if (text == '') {
-      text = '0'
-    }
-    console.log('text ' + text)
-    console.log('replaced ' + text.replace(/[^0-9]+/g, ''))
-    return (parseFloat(text.replace(/[^0-9]+/g, '')) / 100);
-  };
-
   render() {
     return (
       <View style={styles.container}>  
-        <OutlinedTextField
-          label='amount'
-          keyboardType='phone-pad'
-          formatText={this.formatText}
-          onSubmitEditing={this.onSubmit}
-          ref={this.fieldRef}
-        />
-        <NumericInput
+        
+        <NumericInput style={styles.formatting}
+          placeholder = "$0.00"
           type='currency'
           locale='en-US'
           currency='USD'
@@ -60,6 +30,22 @@ export default class AddTransaction extends React.Component {
   }
 }
 
+// const styles: {
+//   container: ViewStyleProp,
+//   formatting: TextStyleProp
+// } = StyleSheet.create({
+//   container: {
+//     paddingTop: '10%',
+//     // paddingRight: '30%',
+//     // paddingLeft: '10%',
+//     borderBottomWidth: 1,
+//   },
+//   formatting: {
+//     fontSize: 50,
+//     textAlign: 'center',
+//     margin: 10
+//   }
+// })
 
 
 

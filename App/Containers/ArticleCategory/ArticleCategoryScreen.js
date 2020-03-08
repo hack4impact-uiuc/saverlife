@@ -3,9 +3,14 @@ import { StyleSheet, View, Text, ScrollView } from 'react-native';
 import FeaturedArticle from '../../Components/FeaturedArticle/FeaturedArticle';
 import ArticleCategory from '../../Components/ArticleCategory/ArticleCategory';
 import Style from './ArticleCategoryScreenStyle.js';
+import NavigationService from '../../Services/NavigationService';
 
 
 class ArticleCategoryScreen extends React.Component {
+    onClick = () => {
+      alert('this is a new page');
+    }
+
     render() {
         return (
           <ScrollView>
@@ -22,7 +27,7 @@ class ArticleCategoryScreen extends React.Component {
                 
 
                 <View style={Style.bottomItem}>
-                  <ArticleCategory color="#9e3285" title="Ask an Expert"></ArticleCategory>
+                  <ArticleCategory color="#9e3285" title="Ask an Expert" onClick={this.onClick} ></ArticleCategory>
                 </View> 
 
                 <View style={Style.bottomItem}>

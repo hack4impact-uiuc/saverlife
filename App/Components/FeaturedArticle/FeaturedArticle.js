@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text } from 'react-native';
 import Style from './FeaturedArticleStyle.js';
+import NavigationService from '../../Services/NavigationService';
 
 class FeaturedArticle extends Component {
     render() {
@@ -13,7 +14,7 @@ class FeaturedArticle extends Component {
                     {this.props.articleTitle}
                 </Text>
                 <View style={Style.bottomRow}>
-                    <Text style={Style.readMore}> 
+                    <Text style={Style.readMore} onPress={() => NavigationService.navigate('ArticleCategoryScreen', [])} > 
                         Read More ->
                     </Text>
                     <Text style={Style.tags}> 

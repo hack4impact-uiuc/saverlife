@@ -14,7 +14,7 @@ class FeaturedArticle extends Component {
                     {this.props.articleTitle}
                 </Text>
                 <View style={Style.bottomRow}>
-                    <Text style={Style.readMore} onPress={() => NavigationService.navigate('ArticleCategoryScreen', [])} > 
+                    <Text style={Style.readMore} onPress={() => NavigationService.navigate('MainScreen', [])} > 
                         Read More ->
                     </Text>
                     <Text style={Style.tags}> 

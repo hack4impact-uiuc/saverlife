@@ -5,6 +5,8 @@ import { PropTypes } from 'prop-types'
 import ExampleActions from 'App/Stores/Example/Actions'
 import { liveInEurope } from 'App/Stores/Example/Selectors'
 import { ApplicationStyles, Helpers, Images, Metrics } from 'App/Theme'
+import Style from './ExampleScreenStyle.js'
+import NavigationService from '../../Services/NavigationService';
 
 /**
  * This is an example of a container component.
@@ -57,8 +59,8 @@ class ExampleScreen extends React.Component {
             )}
             <Button
               style={ApplicationStyles.button}
-              onPress={() => this._fetchUser()}
-              title="Refresh"
+              onPress={() => NavigationService.navigate('ArticleCategoryScreen', [])}
+	      title="Refresh"
             />
           </View>
         )}

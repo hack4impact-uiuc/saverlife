@@ -5,14 +5,11 @@ import { PropTypes } from 'prop-types'
 import ExampleActions from 'App/Stores/Example/Actions'
 import { liveInEurope } from 'App/Stores/Example/Selectors'
 import { ApplicationStyles, Helpers, Images, Metrics } from 'App/Theme'
-<<<<<<< HEAD
 import Style from './ExampleScreenStyle.js'
 import NavigationService from '../../Services/NavigationService';
-=======
 import Header from './../../Components/Header/Header'
 import Calendar from './../../Components/Calendar/Calendar'
 import { ScrollView } from 'react-native-gesture-handler'
->>>>>>> ef28ed26a50ccbc8ae828e8f42a75c82b78701f6
 
 /**
  * This is an example of a container component.

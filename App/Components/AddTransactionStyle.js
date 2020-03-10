@@ -5,11 +5,20 @@ export default StyleSheet.create({
 
     container: {
       paddingTop: '10%',
-      borderBottomWidth: 1,
     },
-    formatting: {
+    numericFormat: {
       fontSize: 50,
       textAlign: 'center',
       margin: 10
+    },
+    submitButton: {
+
+    },
+    text: {
+      color: 'grey',
+      textAlign: 'center'
+    },
+    linkButton: {
+
     }
   })

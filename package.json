@@ -15,11 +15,18 @@
     "postinstall": "npx jetify"
   },
   "dependencies": {
+<<<<<<< HEAD
     "@wwdrew/react-native-numeric-textinput": "^1.1.0",
+=======
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/react-native-fontawesome": "^0.2.2",
+>>>>>>> master
     "axios": "^0.19.0",
     "expo-cli": "^3.13.1",
     "global": "^4.4.0",
     "prop-types": "^15.7.2",
+    "hoist-non-react-statics": "^3.3.2",
     "react": "16.9.0",
 <<<<<<< HEAD
     "react-dom": "^16.13.0",
@@ -37,6 +44,12 @@
 >>>>>>> master
     "react-native-responsive-linechart": "^2.2.0",
     "react-native-svg": "^11.0.1",
+<<<<<<< HEAD
+=======
+    "react-native-progress": "^4.0.3",
+    "react-native-shadow-cards": "^1.0.2",
+    "react-native-vector-icons": "^6.6.0",
+>>>>>>> master
     "react-navigation": "^3.11.2",
     "react-redux": "^6.0.1",
     "redux": "^4.0.1",

@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 import { PersistGate } from 'redux-persist/lib/integration/react'
 import createStore from 'App/Stores'
 import RootScreen from './Containers/Root/RootScreen'
+import ArticleCategoryScreen from './Containers/ArticleCategory/ArticleCategoryScreen'
 import SavingsScreen from './Containers/Savings/SavingsScreen'
 import CalendarScreen from './Containers/CalendarScreen/CalendarScreen'
 import ConnectBank from './Containers/ConnectBank/ConnectBank'
@@ -25,11 +26,12 @@ export default class App extends Component {
          * @see https://github.com/rt2zz/redux-persist/blob/master/docs/PersistGate.md
          */}
         <PersistGate loading={null} persistor={persistor}>
-          {/* <RootScreen /> */}
+          <RootScreen ref="MainScreen"/> 
+          {/* <ArticleCategoryScreen/> */}
           {/* <SavingsScreen /> */}
           {/* <CalendarScreen /> */}
+          {/*<ConnectBank /> */}
           {/* <AddTransactionScreen /> */}
-          <ConnectBank />
         </PersistGate>
       </Provider>
     )

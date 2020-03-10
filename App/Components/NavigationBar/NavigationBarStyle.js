@@ -2,6 +2,9 @@ import { StyleSheet } from 'react-native';
 
 export const navigationBar = StyleSheet.create({
   navigationBarContainer: {
+    // position: "absolute",
+    // bottom: 0,
+    // left: 0,
     height: 100,
     backgroundColor: "white",
     flexDirection: "row"

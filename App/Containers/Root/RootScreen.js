@@ -6,6 +6,7 @@ import { connect } from 'react-redux'
 import StartupActions from 'App/Stores/Startup/Actions'
 import { PropTypes } from 'prop-types'
 import { Helpers } from 'App/Theme'
+import NavigationBar from '../../Components/NavigationBar/NavigationBar'
 
 class RootScreen extends Component {
   componentDidMount() {

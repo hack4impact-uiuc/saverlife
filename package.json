@@ -15,6 +15,7 @@
     "postinstall": "npx jetify"
   },
   "dependencies": {
+    "@wwdrew/react-native-numeric-textinput": "^1.1.0",
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/react-native-fontawesome": "^0.2.2",
@@ -24,6 +25,12 @@
     "prop-types": "^15.7.2",
     "hoist-non-react-statics": "^3.3.2",
     "react": "16.9.0",
+    "react-dom": "^16.13.0",
+    "react-native": "0.61.5",
+    "react-native-calculator": "^0.5.2",
+    "react-native-gesture-handler": "^1.3.0",
+    "react-native-material-textfield": "^0.16.1",
+    "react-native-progress": "^4.0.3",
     "react-native": "^0.61.5",
     "react-native-calendars": "^1.261.0",
     "react-native-elements": "^1.2.7",

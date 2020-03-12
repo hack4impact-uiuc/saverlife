@@ -7,6 +7,7 @@ import ArticleCategoryScreen from './Containers/ArticleCategory/ArticleCategoryS
 import SavingsScreen from './Containers/Savings/SavingsScreen'
 import CalendarScreen from './Containers/CalendarScreen/CalendarScreen'
 import ConnectBank from './Containers/ConnectBank/ConnectBank'
+import AddTransactionScreen from './Containers/AddTransactionScreen/AddTransactionScreen'
 
 const { store, persistor } = createStore()
 
@@ -28,8 +29,9 @@ export default class App extends Component {
           <RootScreen ref="MainScreen"/> 
           {/* <ArticleCategoryScreen/> */}
           {/* <SavingsScreen /> */}
-     	  {/* <CalendarScreen /> */}
-	    {/*<ConnectBank /> */}
+          {/* <CalendarScreen /> */}
+          {/*<ConnectBank /> */}
+          {/* <AddTransactionScreen /> */}
         </PersistGate>
       </Provider>
     )

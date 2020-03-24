@@ -1,6 +1,6 @@
 import React from 'react'
 import { Platform, Text, View, TouchableOpacity, Button, ActivityIndicator, Image } from 'react-native'
-import { getButtonStyle } from './TwoOptionButtonStyle.js'
+import { getButtonStyle, getTextStyle, Style } from './TwoOptionButtonStyle.js'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 
 
@@ -20,21 +20,23 @@ export default class TwoOptionButton extends React.Component {
         }
     }
 
-    onPress = () => {
-
+    onPress = (leftPressed) => {
+        this.setState({
+            leftSelected: leftPressed,
+        })
     }
 
     render() {
         return (
-                <View style={{flexDirection: "row"}}>
-                    <TouchableOpacity style={getButtonStyle(this.state.leftSelected, true)} onPress={this.onPress}>
-                        <Text>Once</Text>
-                    </TouchableOpacity>
+            <View style={Style.container}>
+                <TouchableOpacity style={getButtonStyle(this.state.leftSelected, true)} onPress={()=>{this.onPress(true)}}>
+                    <Text style={getTextStyle(this.state.leftSelected)}>Once</Text>
+                </TouchableOpacity>
 
-                    <TouchableOpacity style={getButtonStyle(!this.state.leftSelected, false)} onPress={this.onPress}>
-                        <Text>Recurring</Text>
-                    </TouchableOpacity>
-                </View>
-        )
+                <TouchableOpacity style={getButtonStyle(!this.state.leftSelected, false)} onPress={()=>{this.onPress(false)}}>
+                    <Text style={getTextStyle(!this.state.leftSelected)}>Recurring</Text>
+                </TouchableOpacity>
+            </View>
+    )
     }
 }

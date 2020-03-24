@@ -3,6 +3,7 @@ import { ScrollView, Platform, Text, View, Button, ActivityIndicator, Image, Tex
 import { ScreenStyle } from './AddBillScreenStyle.js'
 import DropdownMenu from 'react-native-dropdown-menu';
 import RadioSelector from './../../Components/RadioSelector/RadioSelector'
+import TwoOptionButton from '../../Components/TwoOptionButton/TwoOptionButton.js';
 
 /**
  * This is an example of a container component.
@@ -28,24 +29,16 @@ export default class AddBillScreen extends React.Component {
     return (
       <ScrollView>
         <View style={ScreenStyle.container}>
-          <Text>Crete a New Event</Text>
+          <Text style={ScreenStyle.secondaryText}>Crete a New Event</Text>
           
-          <Text>Event Name</Text>
-          <TextInput style={ScreenStyle.input}/>
+          <Text style={ScreenStyle.secondaryText} >Event Name</Text>
+          <TextInput style={ScreenStyle.input} placeholder={"Bill Name"}/>
 
-          <Text>Cost</Text>
-          <TextInput style={ScreenStyle.input}/>
+          <Text style={ScreenStyle.secondaryText}>Cost</Text>
+          <TextInput style={ScreenStyle.input} placeholder={"$10.00"}/>
 
-          <Text>Frequency</Text>
-          <View style={ScreenStyle.rowContainer}>
-            <View style={{flex:1}}>
-              <Button title="Once"/>
-            </View>
-
-            <View style={{flex:1}}>
-              <Button title="Recurring"/>
-            </View>
-          </View>
+          <Text style={ScreenStyle.secondaryText}>Frequency</Text>
+          <TwoOptionButton />
 
           <View style={ScreenStyle.rowContainer}>
             <Text style={ScreenStyle.startRowItem}>Occurs Every</Text>
@@ -62,7 +55,7 @@ export default class AddBillScreen extends React.Component {
             <DropdownMenu style={{zIndex: 2}} data={occuranceOptions} />
           </View>
 
-          <Text>Category</Text>
+          <Text style={ScreenStyle.secondaryText}>Category</Text>
           
           <RadioSelector data={categoryOptions}/>
 

@@ -23,6 +23,7 @@ export default class App extends Component {
          */}
         <PersistGate loading={null} persistor={persistor}>
            <RootScreen />
+           <NavigationBar/>
         </PersistGate>
       </Provider>
     )

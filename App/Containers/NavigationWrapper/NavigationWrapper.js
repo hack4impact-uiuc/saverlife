@@ -28,7 +28,7 @@ class NavigationWrapper extends Component {
     return (
       <>
         {this.state.currentScreen}
-        <NavigationBar route={this.props.navigation.state.routeName} />
+        
       </>
     )
   }

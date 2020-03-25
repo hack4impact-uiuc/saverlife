@@ -1,14 +1,19 @@
 import { StyleSheet } from 'react-native'
 
 export const ScreenStyle = StyleSheet.create({
+  background: {
+    backgroundColor: '#ededed',
+  },
   container: {
-      backgroundColor: '#ededed',
       padding: 15,
   },
   input: {
       height: 50,
       fontSize: 25,
       margin: 5,
+  },
+  picker: {
+    padding: "100%",
   },
   rowContainer: {
     flexDirection: 'row',

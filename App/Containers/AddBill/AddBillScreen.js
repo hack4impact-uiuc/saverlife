@@ -1,9 +1,11 @@
 import React from 'react'
 import { ScrollView, Platform, Text, View, Button, ActivityIndicator, Image, TextInput } from 'react-native'
 import { ScreenStyle } from './AddBillScreenStyle.js'
-import DropdownMenu from 'react-native-dropdown-menu';
+import RNPickerSelect from 'react-native-picker-select';
 import RadioSelector from './../../Components/RadioSelector/RadioSelector'
-import TwoOptionButton from '../../Components/TwoOptionButton/TwoOptionButton.js';
+import TwoOptionButton from '../../Components/TwoOptionButton/TwoOptionButton.js'
+import DatePicker from 'react-native-datepicker'
+import {monthToString, dayToString } from '../../Util/DateUtils'
 
 /**
  * This is an example of a container component.
@@ -14,9 +16,31 @@ import TwoOptionButton from '../../Components/TwoOptionButton/TwoOptionButton.js
 
 export default class AddBillScreen extends React.Component {
 
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      startDate: new Date(),
+    }
+  }
+
+  getDateString = (date) => {
+    
+
+    let month = monthToString(this.state.startDate)
+    let day = dayToString(this.state.startDate)
+
+    return month + " " + day
+  }
+
   render() {
 
-    var occuranceOptions = [["Week", "Two Weeks", "Three Weeks", "Month"]]
+    var occuranceOptions = [
+      {label: "Week", value: "week"},
+      {label: "Two Weeks", value: "two weeks"},
+      {label: "Month", value: "month"},
+    ]
+
     var categoryOptions = [
       {title: "Water", categoryId: 0},
       {title: "Loan/Debt", categoryId: 1},
@@ -27,7 +51,7 @@ export default class AddBillScreen extends React.Component {
     ]
 
     return (
-      <ScrollView>
+      <ScrollView style={ScreenStyle.background}>
         <View style={ScreenStyle.container}>
           <Text style={ScreenStyle.secondaryText}>Crete a New Event</Text>
           
@@ -42,18 +66,22 @@ export default class AddBillScreen extends React.Component {
 
           <View style={ScreenStyle.rowContainer}>
             <Text style={ScreenStyle.startRowItem}>Occurs Every</Text>
-            <DropdownMenu style={{zIndex: 1000}} data={occuranceOptions}  />
+            <RNPickerSelect style={ScreenStyle.picker} useNativeAndroidPickerStyle={false} onValueChange={(value) => console.log(value)} items={occuranceOptions}/>
           </View>
 
           <View style={ScreenStyle.rowContainer}>
             <Text style={ScreenStyle.startRowItem}>Starts On</Text>
-            <DropdownMenu style={{zIndex: 3}} data={occuranceOptions} />
+            <DatePicker 
+              mode="date" 
+              placeholder={this.getDateString()} 
+              showIcon={false} 
+              onDateChange={(date)=>{this.setState({startDate: date})}}/>
           </View>
 
-          <View style={ScreenStyle.rowContainer}>
+          {/* <View style={ScreenStyle.rowContainer}>
             <Text style={ScreenStyle.startRowItem}>Next Occurance</Text>
-            <DropdownMenu style={{zIndex: 2}} data={occuranceOptions} />
-          </View>
+            <RNPickerSelect style={ScreenStyle.picker} useNativeAndroidPickerStyle={false} onValueChange={(value) => console.log(value)} items={occuranceOptions}/>
+          </View> */}
 
           <Text style={ScreenStyle.secondaryText}>Category</Text>
           

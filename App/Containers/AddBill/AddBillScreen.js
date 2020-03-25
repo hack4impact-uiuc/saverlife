@@ -1,10 +1,10 @@
 import React from 'react'
-import { ScrollView, Platform, Text, View, Button, ActivityIndicator, Image, TextInput } from 'react-native'
+import { ScrollView, Platform, TouchableOpacity, Text, View, Button, ActivityIndicator, Image, TextInput } from 'react-native'
 import { ScreenStyle } from './AddBillScreenStyle.js'
 import RNPickerSelect from 'react-native-picker-select';
 import RadioSelector from './../../Components/RadioSelector/RadioSelector'
 import TwoOptionButton from '../../Components/TwoOptionButton/TwoOptionButton.js'
-import DatePicker from 'react-native-datepicker'
+import DateTimePickerModal from "react-native-modal-datetime-picker";
 import {monthToString, dayToString } from '../../Util/DateUtils'
 
 /**
@@ -21,20 +21,37 @@ export default class AddBillScreen extends React.Component {
 
     this.state = {
       startDate: new Date(),
+      isCalendarVisible: false,
     }
   }
 
   getDateString = (date) => {
-    
+    let month = monthToString(date)
+    let day = dayToString(date)
 
-    let month = monthToString(this.state.startDate)
-    let day = dayToString(this.state.startDate)
+    return month + " " + day + ", " + date.getFullYear()
+  }
 
-    return month + " " + day
+  onPressSelectDate = () => {
+    this.setState({
+      isCalendarVisible: true
+    })
+  }
+
+  onConfirmDate = (date) => {
+    this.setState({
+      startDate: date,
+      isCalendarVisible: false,
+    })
+  }
+
+  onCancel = () => {
+    this.setState({
+      isCalendarVisible: false
+    })
   }
 
   render() {
-
     var occuranceOptions = [
       {label: "Week", value: "week"},
       {label: "Two Weeks", value: "two weeks"},
@@ -71,11 +88,12 @@ export default class AddBillScreen extends React.Component {
 
           <View style={ScreenStyle.rowContainer}>
             <Text style={ScreenStyle.startRowItem}>Starts On</Text>
-            <DatePicker 
-              mode="date" 
-              placeholder={this.getDateString()} 
-              showIcon={false} 
-              onDateChange={(date)=>{this.setState({startDate: date})}}/>
+            
+            <TouchableOpacity onPress={()=>{this.onPressSelectDate()}}>
+              <Text>{this.getDateString(this.state.startDate)}</Text>
+            </TouchableOpacity>
+            
+            <DateTimePickerModal isVisible={this.state.isCalendarVisible} onConfirm={this.onConfirmDate} onCancel={this.onCancel}/>
           </View>
 
           {/* <View style={ScreenStyle.rowContainer}>

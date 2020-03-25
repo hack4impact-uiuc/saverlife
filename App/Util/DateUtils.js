@@ -17,7 +17,7 @@ export function monthToString(date) {
 }
 
 export function dayToString(date) {
-    let day = date.getDate() + 1;
+    let day = date.getDate();
 
     if (day >= 10 && day <= 20)
         return day + "th";

@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native'
 export const ScreenStyle = StyleSheet.create({
   background: {
     backgroundColor: '#ededed',
+    flex: 1
   },
   container: {
       padding: 15,

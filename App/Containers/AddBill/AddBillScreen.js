@@ -1,11 +1,11 @@
 import React from 'react'
 import { ScrollView, Platform, TouchableOpacity, Text, View, Button, ActivityIndicator, Image, TextInput } from 'react-native'
 import { ScreenStyle } from './AddBillScreenStyle.js'
-import RNPickerSelect from 'react-native-picker-select';
+import RNPickerSelect from 'react-native-picker-select'
 import RadioSelector from './../../Components/RadioSelector/RadioSelector'
 import TwoOptionButton from '../../Components/TwoOptionButton/TwoOptionButton.js'
-import DateTimePickerModal from "react-native-modal-datetime-picker";
-import {monthToString, getDateString, dayToString } from '../../Util/DateUtils'
+import DateTimePickerModal from "react-native-modal-datetime-picker"
+import { getDateString } from '../../Util/DateUtils'
 
 /**
  * This is an example of a container component.
@@ -22,12 +22,13 @@ export default class AddBillScreen extends React.Component {
     this.state = {
       startDate: new Date(),
       isCalendarVisible: false,
+      billAmount: 0,
     }
   }
-
-  onPressSelectDate = () => {
+  
+  onAmountUpdate = (amount) => {
     this.setState({
-      isCalendarVisible: true
+      billAmount: amount,
     })
   }
 
@@ -35,6 +36,12 @@ export default class AddBillScreen extends React.Component {
     this.setState({
       startDate: date,
       isCalendarVisible: false,
+    })
+  }
+  
+  onPressSelectDate = () => {
+    this.setState({
+      isCalendarVisible: true
     })
   }
 
@@ -61,7 +68,7 @@ export default class AddBillScreen extends React.Component {
     ]
 
     return (
-      <ScrollView style={ScreenStyle.background}>
+      <ScrollView style={ScreenStyle.background} contentContainerStyle={{flexGrow: 1, justifyContent: 'space-between'}}>
         <View style={ScreenStyle.container}>
           <Text style={ScreenStyle.secondaryText}>Crete a New Event</Text>
           
@@ -69,7 +76,7 @@ export default class AddBillScreen extends React.Component {
           <TextInput style={ScreenStyle.input} placeholder={"Bill Name"}/>
 
           <Text style={ScreenStyle.secondaryText}>Cost</Text>
-          <TextInput style={ScreenStyle.input} placeholder={"$10.00"}/>
+          <TextInput style={ScreenStyle.input} placeholder={"$10"}></TextInput>
 
           <Text style={ScreenStyle.secondaryText}>Frequency</Text>
           <TwoOptionButton />

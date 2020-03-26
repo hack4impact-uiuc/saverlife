@@ -5,7 +5,7 @@ import RNPickerSelect from 'react-native-picker-select';
 import RadioSelector from './../../Components/RadioSelector/RadioSelector'
 import TwoOptionButton from '../../Components/TwoOptionButton/TwoOptionButton.js'
 import DateTimePickerModal from "react-native-modal-datetime-picker";
-import {monthToString, dayToString } from '../../Util/DateUtils'
+import {monthToString, getDateString, dayToString } from '../../Util/DateUtils'
 
 /**
  * This is an example of a container component.
@@ -23,13 +23,6 @@ export default class AddBillScreen extends React.Component {
       startDate: new Date(),
       isCalendarVisible: false,
     }
-  }
-
-  getDateString = (date) => {
-    let month = monthToString(date)
-    let day = dayToString(date)
-
-    return month + " " + day + ", " + date.getFullYear()
   }
 
   onPressSelectDate = () => {
@@ -90,16 +83,11 @@ export default class AddBillScreen extends React.Component {
             <Text style={ScreenStyle.startRowItem}>Starts On</Text>
             
             <TouchableOpacity onPress={()=>{this.onPressSelectDate()}}>
-              <Text>{this.getDateString(this.state.startDate)}</Text>
+              <Text>{getDateString(this.state.startDate)}</Text>
             </TouchableOpacity>
             
             <DateTimePickerModal isVisible={this.state.isCalendarVisible} onConfirm={this.onConfirmDate} onCancel={this.onCancel}/>
           </View>
-
-          {/* <View style={ScreenStyle.rowContainer}>
-            <Text style={ScreenStyle.startRowItem}>Next Occurance</Text>
-            <RNPickerSelect style={ScreenStyle.picker} useNativeAndroidPickerStyle={false} onValueChange={(value) => console.log(value)} items={occuranceOptions}/>
-          </View> */}
 
           <Text style={ScreenStyle.secondaryText}>Category</Text>
           

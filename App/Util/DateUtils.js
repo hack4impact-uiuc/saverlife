@@ -1,3 +1,9 @@
+import moment from "moment"
+
+export function getDateString(dateObj) {
+    return moment(dateObj).format("MMMM Do, YYYY")
+}
+
 export function monthToString(date) {
     switch (date.getMonth()) {
         case 0: return "January";
